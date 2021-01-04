@@ -1,0 +1,33 @@
+<!-- 
+Gradient with
+
+#FEA351
+#DC623C
+#3F3433
+-->
+
+<html>
+  <head>
+    <title>ooga booga?</title>
+    <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+  </head>
+
+  <body>
+    <a-scene physics renderer="highRefreshRate: true; antialias: true;" light="defaultLightsEnabled: false;">
+      <a-assets></a-assets>
+
+      <!-- <a-entity environment></a-entity> -->
+
+      <a-entity>
+        <a-entity camera="active: true;" look-controls position="0 1.6764 0"></a-entity>
+        <a-entity expanded-hand-controls="hand: left; color: #FFF"></a-entity>
+        <a-entity expanded-hand-controls="hand: right; color: #FFF"></a-entity>
+      </a-entity>
+      
+      <a-box color="#9851f9" position="0 0 -0.5"></a-box>
+    
+    </a-scene>
+  </body>
+</html>

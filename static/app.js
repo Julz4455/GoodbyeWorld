@@ -29,7 +29,7 @@ AFRAME.registerComponent('eater-sphere', {
     this.el.setAttribute('color', '#ff3503')
 
     this.el.addEventListener('animationcomplete', function() {
-      console.log(this.detail.name.split('__')[this.detail.name.split('__').length-1])
+      console.log(this)
     })
   }
 })

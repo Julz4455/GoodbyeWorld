@@ -8,26 +8,70 @@ Gradient with
 
 <html>
   <head>
-    <title>ooga booga?</title>
+    <title>Goodbye to a world</title>
     <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="static/app.js"></script>
   </head>
 
   <body>
-    <a-scene physics renderer="highRefreshRate: true; antialias: true;" light="defaultLightsEnabled: false;">
-      <a-assets></a-assets>
+    <a-scene loading-screen="backgroundColor: #000000; dotsColor: #ffffff; enabled: true;" physics renderer="highRefreshRate: true; antialias: true;" light="defaultLightsEnabled: false;">
+      <a-assets>
+        <audio id="world" src="audio/world.mp3"></audio>
+        <img id="sky" src="static/skybox.jpg">
+        <!-- <a-asset-item id="sphere" src="models/Earth.gltf"></a-asset-item> -->
+      </a-assets>
 
       <!-- <a-entity environment></a-entity> -->
+      <a-entity sound="src: #world; autoplay: true; positional: false;"></a-entity>
+      <a-sky src="#sky"></a-sky>
 
       <a-entity>
-        <a-entity camera="active: true;" look-controls position="0 1.6764 0"></a-entity>
-        <a-entity expanded-hand-controls="hand: left; color: #FFF"></a-entity>
-        <a-entity expanded-hand-controls="hand: right; color: #FFF"></a-entity>
+        <a-entity camera="active: true;" look-controls wasd-controls position="0 1.6764 0"></a-entity>
+        <!-- <a-entity expanded-hand-controls="hand: left; color: #ffffff"></a-entity> -->
+        <!-- <a-entity expanded-hand-controls="hand: right; color: #ffffff"></a-entity> -->
       </a-entity>
       
-      <a-box color="#9851f9" position="0 0 -0.5"></a-box>
+      <!-- <a-gltf-model src="#sphere" position="0 2 10"></a-gltf-model> -->
+      <a-sphere animation="
+      property: scale;
+      to: 20 20 20;
+      delay: 1000;
+      easing: linear;
+      autoplay: true;
+      dur: 5000
+      "
+      animation__secondary="
+      property: scale;
+      from: 20 20 20;
+      to: 98 98 98;
+      delay: 6000;
+      easing: linear;
+      autoplay: true;
+      dur: 46000
+      "
+      animation__tertiary="
+      property: scale;
+      from: 98 98 98;
+      to: 150 150 150;
+      delay: 52000;
+      easing: linear;
+      autoplay: true;
+      dur: 5000;
+      "
+      eater-sphere position="9 4 -100" scale="5 5 5"></a-sphere>
+      <a-sphere animation="
+      property: position;
+      to: 9 6 -500;
+      delay: 1000;
+      easing: linear;
+      autoplay: true;
+      dur: 57000
+      "
+      metalness="0.25" color="#3858a8" position="8.25 4 -30" scale="2 2 2"></a-sphere>
     
+      <a-entity light="type: ambient; color: #fff;"></a-entity>
     </a-scene>
   </body>
 </html>

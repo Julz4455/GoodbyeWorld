@@ -1,6 +1,6 @@
 AFRAME.registerComponent('expanded-hand-controls', {
   schema: {
-    color: {type: 'color', default: '#bbb'},
+    color: {type: 'color', default: '#bbbbbb'},
     hand: {type: 'string', default: 'left'}
   },
 
@@ -18,6 +18,18 @@ AFRAME.registerComponent('expanded-hand-controls', {
     this.el.addEventListener('pistolend', function() {
       // Disable raycasting
       this.setAttribute('raycaster', 'enabled: false; showLine: false;')
+    })
+  }
+})
+
+AFRAME.registerComponent('eater-sphere', {
+  schema: {},
+
+  init: function() {
+    this.el.setAttribute('color', '#ff3503')
+
+    this.el.addEventListener('animationcomplete', function() {
+      console.log(this.detail.name.split('__')[this.detail.name.split('__').length-1])
     })
   }
 })

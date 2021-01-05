@@ -1,0 +1,21 @@
+{
+  "name": "GoodbyeWorld",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon -w static -w index.html -x 'hs -p 4000 --cors --log-ip -c-1 --no-dotfiles'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Julz4455/GoodbyeWorld.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Julz4455/GoodbyeWorld/issues"
+  },
+  "homepage": "https://github.com/Julz4455/GoodbyeWorld#readme"
+}
